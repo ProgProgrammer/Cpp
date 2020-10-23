@@ -22,7 +22,7 @@ int main()
     }
     left_value = max(a+b+c, number_module);
     right_value = min(a*b, 2*a*c);
-    result = fmax(left_value, right_value);
+    result = max(left_value, right_value);
     cout << "X = " << result;
     return 0;
 }

@@ -2,40 +2,9 @@
 using namespace std;
 int a, b, c;
 
-int maxNumber(int value_left, int value_right)
-{
-    int result;
-    result = value_left;
-
-    if (value_right < 0)
-    {
-        value_right = -value_right;
-    }
-
-    if (value_left < value_right)
-    {
-        result = value_right;
-    }
-
-    return result;
-}
-
-int minNumber(int value_left, int value_right)
-{
-    int result;
-    result = value_left;
-
-    if (value_left > value_right)
-    {
-        result = value_right;
-    }
-
-    return result;
-}
-
 int main()
 {
-    int left_value, right_value, result;
+    int number_module, left_value, right_value, result;
     cout << "Enter first number: ";
     cin >> a;
     cout << endl;
@@ -46,9 +15,14 @@ int main()
     cin >> c;
     cout << endl;
 
-    left_value = maxNumber(a+b+c, a+b-c);
-    right_value = minNumber(a*b, 2*a*c);
-    result = maxNumber(left_value, right_value);
+    number_module = a + b - c;
+    if (number_module < 0)
+    {
+        number_module = -number_module;
+    }
+    left_value = fmax(a+b+c, number_module);
+    right_value = fmin(a*b, 2*a*c);
+    result = fmax(left_value, right_value);
     cout << "X = " << result;
     return 0;
 }

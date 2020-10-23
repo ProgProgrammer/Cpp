@@ -14,7 +14,7 @@ int result_largest;
 int average;
 int composition;
 
-int findVariable(int i, string value)
+void findVariable(int i, string value)
 {
     if (i == 0)
     {
@@ -26,7 +26,6 @@ int findVariable(int i, string value)
         {
             number_1 = (double_number_1 * double_number_2 * double_number_3) * 2;
         }
-        return number_1;
     }
     else if (i == 1)
     {
@@ -38,7 +37,6 @@ int findVariable(int i, string value)
         {
             number_2 = (double_number_1 * double_number_2 * double_number_3) * 2;
         }
-        return number_2;
     }
     else if (i == 2)
     {
@@ -50,10 +48,7 @@ int findVariable(int i, string value)
         {
             number_3 = (double_number_1 * double_number_2 * double_number_3) * 2;
         }
-        return number_3;
     }
-
-    return 0;
 }
 
 int main()
@@ -89,9 +84,8 @@ int main()
             largest_i = i;
         }
     }
-    result_smallest = findVariable(smallest_i, smallest_value);
-    result_largest = findVariable(largest_i, largest_value);
-    cout << result_smallest << endl;
-    cout << result_largest << endl;
+    findVariable(smallest_i, smallest_value);
+    findVariable(largest_i, largest_value);
+    cout << "1 number: " << number_1 << endl << "2 number: " << number_2 << endl << "3 number: " << number_3;
     return 0;
 }

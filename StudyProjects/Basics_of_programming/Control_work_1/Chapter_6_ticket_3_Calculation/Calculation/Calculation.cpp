@@ -20,9 +20,9 @@ int main()
     {
         number_module = -number_module;
     }
-    left_value = max(a+b+c, number_module);
-    right_value = min(a*b, 2*a*c);
-    result = max(left_value, right_value);
+    left_value = fmax(a+b+c, number_module);
+    right_value = fmin(a*b, 2*a*c);
+    result = fmax(left_value, right_value);
     cout << "X = " << result;
     return 0;
 }

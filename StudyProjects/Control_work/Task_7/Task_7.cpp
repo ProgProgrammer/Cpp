@@ -2,6 +2,11 @@
 #include <math.h>
 using namespace std;
 
+void computation(float arr_x[], float &s)
+{
+    s = (sin(arr_x[0] + 3.14 / 4) + cos(arr_x[1] + 3.14 / 4)) / (sin(arr_x[2] + 3.14 / 3) + cos(arr_x[3] + 3.14 / 3)) * sqrt(abs(sin(arr_x[4] + 2 * 3.14 / 5) + cos(arr_x[5] + 2 * 3.14 / 5)));
+}
+
 int main()
 {
     setlocale(LC_ALL, "Russian");
@@ -14,7 +19,8 @@ int main()
         cin >> arr_x[i];
         cout << endl;
     }
-    s = (sin(arr_x[0] + 3.14 / 4) + cos(arr_x[1] + 3.14 / 4)) / (sin(arr_x[2] + 3.14 / 3) + cos(arr_x[3] + 3.14 / 3)) * sqrt(abs(sin(arr_x[4] + 2 * 3.14 / 5) + cos(arr_x[5] + 2 * 3.14 / 5)));
+    computation(arr_x, s);
     cout << "S = " << s;
+    cin.get();
     return 0;
 }
